@@ -11,7 +11,7 @@
     <nav>
         <div class="navbar">
             <div class="navbar-brand">
-                <h3>Graphic Design</h3>
+                <h3>Deere</h3>
             </div>
             <div class="navbar-nav d-none">
                 <a href="#" class="nav-link">Home</a>
@@ -54,29 +54,37 @@
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quibusdam nesciunt ex, ipsa tempora asperiores error animi quam blanditiis consectetur exercitationem porro alias tempore? Consequatur laborum asperiores error animi. Unde omnis placeat consectetur voluptates laborum fugiat animi similique ea, quisquam voluptatum explicabo veritatis dicta ab officia. Eaque recusandae, obcaecati odio harum maxime sapiente, non tempora saepe commodi doloribus alias rem? Provident, accusantium reiciendis pariatur eligendi optio delectus, architecto reprehenderit eaque est vel voluptatum nisi dolore. Nobis quasi cupiditate tempora corrupti!</p>  
                     </div>
                     <div class="right">
-                        <div id="acch1" class="accordion-header">
-                            <h5>Who are we? <span>+</span></h5>
+                        <div class="accordion">
+                            <li class="accordion-header">
+                                <h5>Visi & Misi <span>+</span></h5>
+                            </li>
+                            <li class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, sit sint! Totam ea, sed expedita a necessitatibus blanditiis repellat sit, quo natus impedit animi, in vitae non recusandae. Animi, quasi?</p>
+                            </li>
                         </div>
-                        <div id="acc1" class="accordion-body d-none">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas veritatis commodi saepe dignissimos maiores. Iusto perferendis adipisci labore rem quis voluptatem in dolor, voluptates architecto nihil, praesentium porro, veniam sint.</p>
+                        <div class="accordion">
+                            <li class="accordion-header">
+                                <h5>Visi & Misi <span>+</span></h5>
+                            </li>
+                            <li class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, sit sint! Totam ea, sed expedita a necessitatibus blanditiis repellat sit, quo natus impedit animi, in vitae non recusandae. Animi, quasi?</p>
+                            </li>
                         </div>
-                        <div class="accordion-header">
-                            <h5>Who are we? <span>+</span></h5>
+                        <div class="accordion">
+                            <li class="accordion-header">
+                                <h5>Visi & Misi <span>+</span></h5>
+                            </li>
+                            <li class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, sit sint! Totam ea, sed expedita a necessitatibus blanditiis repellat sit, quo natus impedit animi, in vitae non recusandae. Animi, quasi?</p>
+                            </li>
                         </div>
-                        <div class="accordion-body d-none">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas veritatis commodi saepe dignissimos maiores. Iusto perferendis adipisci labore rem quis voluptatem in dolor, voluptates architecto nihil, praesentium porro, veniam sint.</p>
-                        </div>
-                        <div class="accordion-header">
-                            <h5>Who are we? <span>+</span></h5>
-                        </div>
-                        <div class="accordion-body d-none">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas veritatis commodi saepe dignissimos maiores. Iusto perferendis adipisci labore rem quis voluptatem in dolor, voluptates architecto nihil, praesentium porro, veniam sint.</p>
-                        </div>
-                        <div class="accordion-header">
-                            <h5>Who are we? <span>+</span></h5>
-                        </div>
-                        <div class="accordion-body d-none">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas veritatis commodi saepe dignissimos maiores. Iusto perferendis adipisci labore rem quis voluptatem in dolor, voluptates architecto nihil, praesentium porro, veniam sint.</p>
+                        <div class="accordion">
+                            <li class="accordion-header">
+                                <h5>Visi & Misi <span>+</span></h5>
+                            </li>
+                            <li class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, sit sint! Totam ea, sed expedita a necessitatibus blanditiis repellat sit, quo natus impedit animi, in vitae non recusandae. Animi, quasi?</p>
+                            </li>
                         </div>
                     </div>
                 </div>
@@ -498,9 +506,7 @@
             let btnShow = $('.btn-show')
 
             // accordion
-            let right = $('.right')
             let accordionHeader = $('.accordion-header')
-            let accordionBody = $('.accordion-body')
 
             // --- navbar
             $(window).scroll(function(){
@@ -512,6 +518,10 @@
                 }
             })
 
+            btnShow.click(function(){
+                $('.navbar-nav').toggleClass('d-none')
+            })
+
             // portfolio card hover
             $('.content-card').mouseenter(function(){
                 $('.info').removeClass('d-none')
@@ -520,21 +530,11 @@
                 $('.info').addClass('d-none')
             })
 
-            // Tab
-            let tabContain = $('.tab')
-            let tabContent = $('.tab-content')
-
-            tabContain.click(function(e){
-                if(e.target.className == 'tab-tab'){
-                    tabContent.toggleClass('d-none')
-                }
-            })
-
             // accordion
-            right.click(function(e){
-                if(e.target.className == 'accordion-header'){
-
-                }
+            $('.accordion-body').hide()
+            accordionHeader.click(function(e){
+                $(this).parent().toggleClass('shadow')
+                $(this).next().slideToggle(200)
             })
 
         })
