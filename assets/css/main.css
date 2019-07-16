@@ -41,7 +41,6 @@ nav .navbar .navbar-nav {
   position: absolute;
   top: 60px;
   left: 0;
-  right: auto;
   background: #fff;
   -webkit-animation: ftop .5s ease-in-out forwards;
           animation: ftop .5s ease-in-out forwards;
@@ -76,6 +75,10 @@ nav .btn-show span {
 
 .container {
   padding: 5% 8%;
+}
+
+#section1 p {
+  font-size: 14px;
 }
 
 #section1 .slogan {
@@ -140,16 +143,16 @@ nav .btn-show span {
   text-align: justify;
 }
 
-#section2 .card .card-body .left h3, #section2 .card .card-body .left p {
+#section2 .card .card-body .left h4, #section2 .card .card-body .left p {
   padding: 0px 20px;
 }
 
-#section2 .card .card-body .left h3 {
-  font-weight: 200;
+#section2 .card .card-body .left h4 {
+  font-weight: bold;
 }
 
 #section2 .card .card-body .left p {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 #section2 .card .card-body .right {
@@ -275,9 +278,10 @@ nav .btn-show span {
   bottom: 0;
   width: 100%;
   height: 30%;
-  background: rgba(0, 0, 0, 0.8);
+  background: #484078;
   color: #fff;
   text-align: left;
+  visibility: hidden;
 }
 
 #section3 .tab .tab-content .content-card .info h5 {
@@ -288,6 +292,11 @@ nav .btn-show span {
 #section3 .tab .tab-content .content-card .info p {
   font-weight: 200;
   font-size: 12px;
+}
+
+#section3 .tab .tab-content .content-card:hover > .info {
+  -webkit-animation: bling .5s ease-in-out forwards;
+          animation: bling .5s ease-in-out forwards;
 }
 
 #section4 {
@@ -390,23 +399,25 @@ footer p {
 }
 
 @media (min-width: 800px) {
+  nav {
+    visibility: visible;
+  }
   nav .navbar {
     padding: 0px 50px;
     font-family: "Montserrat";
+    position: relative;
   }
   nav .navbar .navbar-brand {
     float: left;
   }
   nav .navbar .navbar-nav {
-    width: 100%;
-    position: absolute;
-    background: transparent;
-    line-height: 60px;
     float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: 60%;
+    background: transparent;
     display: block;
-    top: 0px;
-    left: 60%;
-    right: auto;
   }
   nav .navbar .navbar-nav .nav-link {
     margin-left: 40px;
@@ -417,17 +428,7 @@ footer p {
     color: #2F2F41;
   }
   nav .btn-show {
-    position: absolute;
-    right: 30px;
-    top: 10px;
     display: none;
-  }
-  nav .btn-show span {
-    display: block;
-    width: 35px;
-    height: 3px;
-    background: #333;
-    margin: 7px 0;
   }
   .container {
     padding: 20px 70px;
@@ -444,7 +445,7 @@ footer p {
     background: transparent;
     color: #3F3D56;
     border: 2px solid #3F3D56;
-    padding: 10px 60px;
+    padding: 10px 30px;
     border-radius: 2px;
     position: absolute;
     margin-top: 20px;
@@ -462,8 +463,8 @@ footer p {
     margin-top: 100px;
   }
   #section1 .animate .bg-img {
-    width: 100%;
-    margin-left: 8%;
+    width: 80%;
+    margin-left: 10%;
     -webkit-animation: blink 1s ease-in-out forwards;
             animation: blink 1s ease-in-out forwards;
   }
@@ -585,9 +586,10 @@ footer p {
     bottom: 0;
     width: 100%;
     height: 30%;
-    background: rgba(0, 0, 0, 0.8);
+    background: #484078;
     color: #fff;
     text-align: left;
+    visibility: hidden;
   }
   #section3 .tab .tab-content .content-card .info h5 {
     margin-left: 20px;
@@ -642,6 +644,36 @@ footer p {
 
 li {
   list-style: none;
+}
+
+@-webkit-keyframes bling {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes bling {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
 @-webkit-keyframes blink {
